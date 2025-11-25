@@ -4841,8 +4841,13 @@ public class xtGraphics extends Panel implements Runnable {
             new Color(140, 70, 0), new Color(255, 128, 0), new Color(255, 255, 0),
             "STAGE MAKER", new Font("Adventure", Font.BOLD, 20));
 
-        drawMenuButton(rd, main_menu_op_x, main_menu_op_0_y + 40 * 5, main_menu_op_width, main_menu_button_height,
+        drawMenuButton(rd, main_menu_op_x, main_menu_op_0_y + 40 * 2, main_menu_op_width, main_menu_button_height,
             main_menu_arcwidth, main_menu_archeight, opselect == 2, shaded,
+            new Color(140, 70, 0), new Color(255, 128, 0), new Color(255, 255, 0),
+            "CAMPAIGN EDITOR", new Font("Adventure", Font.BOLD, 20));
+
+        drawMenuButton(rd, main_menu_op_x, main_menu_op_0_y + 40 * 5, main_menu_op_width, main_menu_button_height,
+            main_menu_arcwidth, main_menu_archeight, opselect == 3, shaded,
             new Color(140, 70, 0), new Color(255, 128, 0), new Color(255, 255, 0),
             "BACK", new Font("Adventure", Font.BOLD, 20));
 
@@ -4857,6 +4862,9 @@ public class xtGraphics extends Panel implements Runnable {
                 menuTip = "Build and publish your custom stages.";
                 break;
             case 2:
+                menuTip = "Create your own single-player campaigns (hacks).";
+                break;
+            case 3:
                 menuTip = "Return to the previous menu.";
                 break;
         }
@@ -4883,7 +4891,11 @@ public class xtGraphics extends Panel implements Runnable {
                 opselect = 1;
             }
             if (opselect == 2) {
+                GameSparker.menuState = Phase.DIALOG_UNAVAILABLE;
                 opselect = 2;
+            }
+            if (opselect == 3) {
+                opselect = 3;
                 GameSparker.menuButtonState = Phase.MAINMENU_MAIN;
             }
             flipo = 0;

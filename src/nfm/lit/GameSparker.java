@@ -1629,7 +1629,7 @@ public class GameSparker extends Applet implements Runnable {
                         xtgraphics.menuButtons(u[0]);
                     }
                     if (menuButtonState == Phase.MAINMENU_WORKSHOP) {
-                        xtgraphics.mainMenuItems = 3;
+                        xtgraphics.mainMenuItems = 4;
                         xtgraphics.menuButtonsWorkshop(u[0]);
                     }
                     if (menuButtonState == Phase.MAINMENU_PLAY) {
